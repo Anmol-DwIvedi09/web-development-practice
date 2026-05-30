@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node 
+{
+    int data 
+    struct node *link;
+};
+struct Node {
+    int data;
+    struct Node* link;
+};
+int main(){
+    int values[]={10, 20, 30};
+    int n=sizeof(values)/sizeof(values[0]);
+    struct Node *head=NULL,*ptr=NULL;
+    for(int i=0;i<n;i++){
+        struct Node* newNode =(struct Node*)malloc(sizeof(struct Node));
+        newNode->data=values[i];
+        newNode->link=NULL;
+        if(head==NULL){
+            head=newNode;
+            ptr=head;
+        }else{
+            ptr->link=newNode;
+            ptr=ptr->link;
+        }
+    }
+    ptr=head;
+    printf("Linked List:");
+    while(ptr!=NULL){
+        printf("%d->",ptr->data);
+        ptr=ptr->link;
+    }
+    printf("\n");
+    return 0;
+}
+
