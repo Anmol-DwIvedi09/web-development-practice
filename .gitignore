@@ -1,0 +1,15 @@
+
+# Dependencies and local environments
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
